@@ -1,0 +1,67 @@
+.searchData {
+  position: relative;
+}
+.searchData input {
+  border-radius: 8px;
+  border: 2px solid #878787;
+  background: #FFF;
+  width: 310px;
+  height: 56px;
+  padding: 0 20px 0 40px;
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.searchData input:focus {
+  border: none;
+}
+.searchData svg {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.searchData input::-webkit-input-placeholder {
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.searchData input::-moz-placeholder {
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.searchData input:-ms-input-placeholder {
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.searchData input::-ms-input-placeholder {
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.searchData input::placeholder {
+  color: #919191;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}

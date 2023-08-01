@@ -1,0 +1,46 @@
+.navMenu {
+  width: 100%;
+  padding: 13px 0;
+  background: #f3f3f3;
+  -webkit-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.15);
+}
+.navMenu .navMenu__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.navMenu .navMenu__inner a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.navMenu .navMenu__inner a > div:nth-child(1) {
+  width: 104px;
+  height: 83px;
+}
+.navMenu .navMenu__inner a > div:nth-child(2) h4 {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.navMenu .navMenu__inner a > div:nth-child(2) p {
+  color: #878787;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
