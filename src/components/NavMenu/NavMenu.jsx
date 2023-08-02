@@ -5,13 +5,14 @@ import SearchData from "../SearchData/SearchData";
 import AuthUser from "../Auth/AuthUser/AuthUser";
 import { NavLink } from "react-router-dom";
 const NavMenu = () => {
+  
   return (
     <div className={styles.navMenu}>
       <div className="container">
         <div className={styles.navMenu__inner}>
           <NavLink to={"/"}>
             <div>
-              <img src={logo} alt="" />
+              <img src={logo} alt="logo" />
             </div>
             <div>
               <h4>MangoRead</h4>

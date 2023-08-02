@@ -8,6 +8,7 @@ const AllComments = ({ id }) => {
   const { allComments, lookBlockAddComment } = useSelector(
     (state) => state.commentSlice
   );
+  console.log(allComments);
   return (
     <>
       <div className={styles.allCcomments}>
@@ -26,9 +27,9 @@ const AllComments = ({ id }) => {
                 </li>
               ) : (
                 allComments?.map((comment) => (
-                  <li>
+                  <li key={comment.id}>
                     <div>
-                      <img src={comment.img} alt="user" />
+                      <img src={comment.user.image_file} alt="user" />
                     </div>
                     <div className={styles.line_vertical}></div>
                     <div>

@@ -10,7 +10,7 @@ const MangaData = () => {
   useEffect(() => {
     dispatch(toTakeAllData());
   }, []);
-  console.log(allData);
+  // console.log(allData);
   return (
     <div className={styles.mangaData}>
       {allData?.map((card) => (

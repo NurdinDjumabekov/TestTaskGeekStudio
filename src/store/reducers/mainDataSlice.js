@@ -46,7 +46,7 @@ const mainDataSlice = createSlice({
   reducers: {
     changeAllData: (state, action) => {
       state.allData = reductionMangaData(action.payload);
-      console.log(state.allData);
+      // console.log(state.allData);
     },
     changeDataSearch: (state, action) => {
       state.dataSearch = action.payload;
