@@ -1,0 +1,33 @@
+.iconDataUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+.iconDataUser p {
+  color: #000;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+  height: 35px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.iconDataUser > div {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.iconDataUser > div img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

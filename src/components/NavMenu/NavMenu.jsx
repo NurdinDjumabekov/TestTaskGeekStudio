@@ -4,8 +4,12 @@ import logo from "../../assets/images/logo.svg";
 import SearchData from "../SearchData/SearchData";
 import AuthUser from "../Auth/AuthUser/AuthUser";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import IconDataUser from "../Auth/IconDataUser/IconDataUser";
 const NavMenu = () => {
-  
+  const { nameUser } = useSelector((state) => state.authSlice);
+  // console.log(nameUser);
+
   return (
     <div className={styles.navMenu}>
       <div className="container">
@@ -20,7 +24,7 @@ const NavMenu = () => {
             </div>
           </NavLink>
           <SearchData />
-          <AuthUser />
+          {nameUser === "" ? <AuthUser /> : <IconDataUser />}
         </div>
       </div>
     </div>

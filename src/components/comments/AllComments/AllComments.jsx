@@ -8,7 +8,9 @@ const AllComments = ({ id }) => {
   const { allComments, lookBlockAddComment } = useSelector(
     (state) => state.commentSlice
   );
-  console.log(allComments);
+
+  const { nameUser } = useSelector((state) => state.authSlice);
+  // console.log(allComments);
   return (
     <>
       <div className={styles.allCcomments}>
@@ -16,9 +18,15 @@ const AllComments = ({ id }) => {
           <div className={styles.allCcomments__inner}>
             <div>
               <p>Топ комментарий</p>
-              <button onClick={() => dispatch(changeLookBlockAddComment(true))}>
-                добавить комментарий
-              </button>
+              {nameUser !== "" ? (
+                <button
+                  onClick={() => dispatch(changeLookBlockAddComment(true))}
+                >
+                  добавить комментарий
+                </button>
+              ) : (
+                ""
+              )}
             </div>
             <ul>
               {allComments.length === 0 ? (

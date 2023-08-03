@@ -27,20 +27,26 @@ export const addComments = createAsyncThunk(
   "addComments",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios({
+      // console.log(info);
+      await axios({
         method: "POST",
-        url: `http://68.183.214.2:8666/api/api/v1/manga/${info.id}/add-comment/`,
+        url: `http://68.183.214.2:8666/api/v1/manga/${info.id}/add-comment/`,
         data: {
           text: info.data,
         },
+        headers: {
+          Authorization: `Bearer ${info.access}`,
+        },
       });
-      dispatch(changeAllComments(data));
-      //   console.log(data, "data");
+      // console.log(data, "data");
     } catch (error) {
       console.log(error);
     }
   }
 );
+
+/// KutmanBekNurlanov
+/// adminadmin
 
 const commentSlice = createSlice({
   name: "commentSlice",

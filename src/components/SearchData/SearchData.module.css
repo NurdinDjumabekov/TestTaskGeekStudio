@@ -1,13 +1,21 @@
 .searchData {
   position: relative;
+  height: 56px;
+  margin: 0;
+  width: auto;
 }
-.searchData input {
+.searchData .searchData__label {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.searchData .searchData__label input {
   border-radius: 8px;
   border: 2px solid #878787;
   background: #FFF;
-  width: 310px;
+  width: 340px;
   height: 56px;
-  padding: 0 20px 0 40px;
+  padding: 0 40px 0 40px;
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -15,15 +23,13 @@
   font-weight: 400;
   line-height: 20px;
 }
-.searchData input:focus {
-  border: none;
-}
-.searchData svg {
+.searchData .searchData__label svg {
   position: absolute;
-  left: 25px;
+  right: 5px;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 .searchData input::-webkit-input-placeholder {
   color: #919191;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sendLoginUser } from "../../../store/reducers/authSlice";
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div>
       <form action="" onSubmit={sendLogin}>
         <input
           type="text"
@@ -41,7 +41,7 @@ const Login = () => {
         />
         <button type="submit">Вход</button>
       </form>
-    </>
+    </div>
   );
 };
 

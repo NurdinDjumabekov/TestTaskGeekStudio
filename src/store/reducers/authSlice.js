@@ -5,13 +5,16 @@ import jwt_decode from "jwt-decode";
 const initialState = {
   lookAuth: false,
   stateTypeAuth: false,
-  access:
-    localStorage.getItem("access") !== "" ? localStorage.getItem("access") : "",
-  refresh:
-    localStorage.getItem("refresh") !== ""
-      ? localStorage.getItem("refresh")
-      : "",
-  idUser: 0,
+  access: localStorage.getItem("access") ? localStorage.getItem("access") : "",
+  refresh: localStorage.getItem("refresh")
+    ? localStorage.getItem("refresh")
+    : "",
+  nameUser: localStorage.getItem("nameUser")
+    ? localStorage.getItem("nameUser")
+    : "",
+  nameImg: localStorage.getItem("nameImg")
+    ? localStorage.getItem("nameImg")
+    : "",
 };
 
 export const sendRegistrationUser = createAsyncThunk(
@@ -29,7 +32,7 @@ export const sendRegistrationUser = createAsyncThunk(
         url: `http://68.183.214.2:8666/api/auth/signup/`,
         data: formData,
       });
-      console.log(data, "data");
+      // console.log(data, "data");
     } catch (error) {
       console.log(error);
     }
@@ -48,11 +51,23 @@ export const sendLoginUser = createAsyncThunk(
           password: info.password,
         },
       });
-      console.log(data, "data");
       localStorage.setItem("access", data.access);
       localStorage.setItem("refresh", data.refresh);
-      const decodedToken = jwt_decode(data.access);
-      console.log(decodedToken);
+      const decodedToken = jwt_decode(data.access); // декодирование токена для получения id пользователя
+      localStorage.setItem("id_user", decodedToken.user_id);
+      // console.log(data, "data");
+      // console.log(decodedToken);
+
+      ///////////////// отправка второго запроса!
+      const dataUser = await axios({
+        method: "GET",
+        url: `http://68.183.214.2:8666/api/auth/profile/${decodedToken.user_id}/`,
+      });
+      console.log(dataUser, "dataUser");
+      dispatch(changeNameUser(dataUser?.data.username));
+      localStorage.setItem("nameUser", dataUser?.data.username);
+      dispatch(changeNameImg(dataUser?.data.image_file));
+      localStorage.setItem("nameImg", dataUser?.data.image_file);
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +75,8 @@ export const sendLoginUser = createAsyncThunk(
 );
 
 /// KutmanBekNurlanov
+/// adminadmin
+/// NurdinDjumabekov_geeks
 
 const authSlice = createSlice({
   name: "authSlice",
@@ -77,6 +94,12 @@ const authSlice = createSlice({
     changeRefresh: (state, action) => {
       state.refresh = action.payload;
     },
+    changeNameUser: (state, action) => {
+      state.nameUser = action.payload;
+    },
+    changeNameImg: (state, action) => {
+      state.nameImg = action.payload;
+    },
   },
 });
 export const {
@@ -84,6 +107,8 @@ export const {
   changeStateTypeAuth,
   changeAccess,
   changeRefresh,
+  changeNameUser,
+  changeNameImg,
 } = authSlice.actions;
 
 export default authSlice.reducer;

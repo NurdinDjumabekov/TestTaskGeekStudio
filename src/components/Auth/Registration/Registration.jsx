@@ -29,7 +29,7 @@ const Registration = () => {
     // console.log(data.img);
   };
   return (
-    <>
+    <div>
       <form action="" onSubmit={sendRegistration}>
         <label>
           <img src="/src/assets/images/Auth/i_am.jpg" alt="" />
@@ -78,7 +78,7 @@ const Registration = () => {
         />
         <button type="submit">регистрация</button>
       </form>
-    </>
+    </div>
   );
 };
 
