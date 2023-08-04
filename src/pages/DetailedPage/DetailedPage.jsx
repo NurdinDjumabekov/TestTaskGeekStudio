@@ -5,7 +5,7 @@ import { NavLink, useParams } from "react-router-dom";
 import styles from "./DetailedPage.module.css";
 import { toTakeAllComments } from "../../store/reducers/commentSlice";
 import AllComments from "../../components/comments/AllComments/AllComments";
-import Preloader from "../../components/Preloader/Preloader";
+import Preloader from "../../components/Preloaders/Preloader/Preloader";
 
 const DetailedPage = () => {
   const { preloaderState, detailedData } = useSelector(

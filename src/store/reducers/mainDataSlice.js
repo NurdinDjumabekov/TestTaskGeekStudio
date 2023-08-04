@@ -7,6 +7,7 @@ const initialState = {
   allData: [],
   detailedData: {},
   preloaderState: true,
+  miniPreloader: false,
   clearSearchState: false,
 };
 
@@ -48,12 +49,30 @@ export const toTakeDetailedData = createAsyncThunk(
   }
 );
 
+export const toTakeSearchData = createAsyncThunk(
+  "toTakeSearchData",
+  async (search, { dispatch }) => {
+    try {
+      const { data } = await axios({
+        method: "GET",
+        url: `http://68.183.214.2:8666/api/v1/manga/?search=${search}`,
+      });
+      dispatch(changeAllData(data));
+      dispatch(changeMiniPreloader(false));
+    } catch (error) {
+      console.log(error);
+      dispatch(changeMiniPreloader(false));
+    }
+  }
+);
+
 const mainDataSlice = createSlice({
   name: "mainDataSlice",
   initialState,
   reducers: {
     changeAllData: (state, action) => {
-      state.allData = reductionMangaData(action.payload);
+      // state.allData = reductionMangaData(action.payload);
+      state.allData = action.payload;
     },
     changeDataSearch: (state, action) => {
       state.dataSearch = action.payload;
@@ -67,6 +86,9 @@ const mainDataSlice = createSlice({
     changeClearSearchState: (state, action) => {
       state.clearSearchState = action.payload;
     },
+    changeMiniPreloader: (state, action) => {
+      state.miniPreloader = action.payload;
+    },
   },
 });
 export const {
@@ -75,6 +97,7 @@ export const {
   changeDetailedData,
   changePreloaderState,
   changeClearSearchState,
+  changeMiniPreloader,
 } = mainDataSlice.actions;
 
 export default mainDataSlice.reducer;

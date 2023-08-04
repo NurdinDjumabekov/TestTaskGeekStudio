@@ -15,7 +15,7 @@
   background: #FFF;
   width: 340px;
   height: 56px;
-  padding: 0 40px 0 40px;
+  padding: 0 40px 0 35px;
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -26,6 +26,14 @@
 .searchData .searchData__label svg {
   position: absolute;
   right: 5px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.searchData .searchData__label .loop {
+  position: absolute;
+  left: 20px;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

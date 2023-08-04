@@ -4,6 +4,7 @@ import axios from "axios";
 const initialState = {
   genresLookState: true,
   allGenres: [],
+  allSortGenres: [],
 };
 
 export const toTakeAllGenres = createAsyncThunk(
@@ -32,8 +33,12 @@ const genresSlice = createSlice({
     changeAllGenres: (state, action) => {
       state.allGenres = action.payload;
     },
+    changeAllSortGenres: (state, action) => {
+      state.allSortGenres = [...state.allSortGenres, action.payload];
+    },
   },
 });
-export const { changeGenresLookState, changeAllGenres } = genresSlice.actions;
+export const { changeGenresLookState, changeAllGenres, changeAllSortGenres } =
+  genresSlice.actions;
 
 export default genresSlice.reducer;

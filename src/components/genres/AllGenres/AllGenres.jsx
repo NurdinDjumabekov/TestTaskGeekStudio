@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import styles from "./AllGenres.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeGenresLookState } from "../../../store/reducers/genresSlice";
+import {
+  changeAllSortGenres,
+  changeGenresLookState,
+} from "../../../store/reducers/genresSlice";
 
 const AllGenres = () => {
   const dispatch = useDispatch();
-  const { allGenres } = useSelector((state) => state.genresSlice);
+  const { allGenres, allSortgenres } = useSelector(
+    (state) => state.genresSlice
+  );
   console.log(allGenres);
+  console.log(allSortgenres);
   return (
     <div className={styles.allGenres}>
       <button onClick={() => dispatch(changeGenresLookState(true))}>
@@ -30,7 +36,10 @@ const AllGenres = () => {
       <ul>
         {allGenres?.map((genre) => (
           <li key={genre.id}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => dispatch(changeAllSortGenres(genre.id))}
+            />
             <p>{genre.title}</p>
           </li>
         ))}

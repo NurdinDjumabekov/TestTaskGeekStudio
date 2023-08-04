@@ -63,7 +63,7 @@ export const sendLoginUser = createAsyncThunk(
         method: "GET",
         url: `http://68.183.214.2:8666/api/auth/profile/${decodedToken.user_id}/`,
       });
-      console.log(dataUser, "dataUser");
+      // console.log(dataUser, "dataUser");
       dispatch(changeNameUser(dataUser?.data.username));
       localStorage.setItem("nameUser", dataUser?.data.username);
       dispatch(changeNameImg(dataUser?.data.image_file));
