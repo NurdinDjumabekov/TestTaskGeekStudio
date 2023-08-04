@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./SortGenres.module.css";
-import { changeGenresLookState } from "../../../store/reducers/genresSlice";
+import {
+  addAllSortGenres,
+  changeAllSortGenres,
+  changeGenresLookState,
+  deleteAllSortGenres,
+} from "../../../store/reducers/genresSlice";
 import { useDispatch } from "react-redux";
 
-const SortGenres = () => {
+const SortTypes = () => {
+  const dispatch = useDispatch();
   const arr = [
     { id: 1, title: "Манга" },
-    { id: 1, title: "Манхва" },
-    { id: 1, title: "Комиксы" },
-    { id: 1, title: "Маньхуа" },
+    { id: 2, title: "Манхва" },
+    { id: 3, title: "Комиксы" },
+    { id: 4, title: "Маньхуа" },
   ];
-  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(changeAllSortGenres([]));
+    // как только отрендерится эта компонента, массив для сравнений сразу станет пустым!!!
+  }, []);
+
+  const inputCheckBox = (title, bool) => {
+    if (bool) {
+      dispatch(addAllSortGenres(title));
+    } else {
+      dispatch(deleteAllSortGenres(title));
+    }
+  };
   return (
     <div className={styles.sortGenres}>
       <div
@@ -39,8 +56,11 @@ const SortGenres = () => {
       <h3>Тип</h3>
       <ul>
         {arr?.map((type) => (
-          <li key={type.title}>
-            <input type="checkbox" />
+          <li key={type.id}>
+            <input
+              type="checkbox"
+              onChange={(e) => inputCheckBox(type.title, e.target.checked)}
+            />
             <p>{type.title}</p>
           </li>
         ))}
@@ -49,4 +69,4 @@ const SortGenres = () => {
   );
 };
 
-export default SortGenres;
+export default SortTypes;

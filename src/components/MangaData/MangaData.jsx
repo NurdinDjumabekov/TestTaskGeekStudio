@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toTakeAllData } from "../../store/reducers/mainDataSlice";
 import { NavLink } from "react-router-dom";
 import Preloader from "../Preloaders/Preloader/Preloader";
+import { toTakeAllDataForSort } from "../../store/reducers/genresSlice";
 
 const MangaData = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,9 @@ const MangaData = () => {
 
   useEffect(() => {
     dispatch(toTakeAllData());
+    dispatch(toTakeAllDataForSort());
   }, []);
-  // console.log(allData, "allData");
+  console.log(allData, "allData");
   return (
     <>
       {preloaderState ? (

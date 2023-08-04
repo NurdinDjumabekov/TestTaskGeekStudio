@@ -1,18 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./AllGenres.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  changeAllSortGenres,
+  addAllSortGenres,
   changeGenresLookState,
+  deleteAllSortGenres,
 } from "../../../store/reducers/genresSlice";
 
 const AllGenres = () => {
   const dispatch = useDispatch();
-  const { allGenres, allSortgenres } = useSelector(
-    (state) => state.genresSlice
-  );
-  console.log(allGenres);
-  console.log(allSortgenres);
+  const { allGenres } = useSelector((state) => state.genresSlice);
+
+  const inputCheckBox = (id, bool) => {
+    if (bool) {
+      dispatch(addAllSortGenres(id));
+    } else {
+      dispatch(deleteAllSortGenres(id));
+    }
+  };
   return (
     <div className={styles.allGenres}>
       <button onClick={() => dispatch(changeGenresLookState(true))}>
@@ -38,7 +43,7 @@ const AllGenres = () => {
           <li key={genre.id}>
             <input
               type="checkbox"
-              onClick={() => dispatch(changeAllSortGenres(genre.id))}
+              onChange={(e) => inputCheckBox(genre.id, e.target.checked)}
             />
             <p>{genre.title}</p>
           </li>
