@@ -39,7 +39,37 @@
           transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.searchData input::-webkit-input-placeholder {
+.searchData .searchData__label .selectSearch {
+  display: block;
+  background-color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 12;
+  top: 60px;
+  overflow-y: scroll;
+  height: 150px;
+  width: 340px;
+  padding: 5px 20px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.searchData .searchData__label .selectSearch p {
+  font-size: 20px;
+  margin: 2px 0px;
+  color: #000;
+  border-bottom: 2px solid black;
+  padding: 20px 0px 30px;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.searchData .searchData__label .selectSearch::-webkit-scrollbar {
+  width: 0.5em;
+}
+.searchData .searchData__label input::-webkit-input-placeholder {
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -47,7 +77,7 @@
   font-weight: 400;
   line-height: 20px;
 }
-.searchData input::-moz-placeholder {
+.searchData .searchData__label input::-moz-placeholder {
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -55,7 +85,7 @@
   font-weight: 400;
   line-height: 20px;
 }
-.searchData input:-ms-input-placeholder {
+.searchData .searchData__label input:-ms-input-placeholder {
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -63,7 +93,7 @@
   font-weight: 400;
   line-height: 20px;
 }
-.searchData input::-ms-input-placeholder {
+.searchData .searchData__label input::-ms-input-placeholder {
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -71,7 +101,7 @@
   font-weight: 400;
   line-height: 20px;
 }
-.searchData input::placeholder {
+.searchData .searchData__label input::placeholder {
   color: #919191;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;

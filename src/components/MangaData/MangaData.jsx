@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import styles from "./MangaData.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toTakeAllData } from "../../store/reducers/mainDataSlice";
+import { toTakeAllDataForSort } from "../../store/reducers/genresSlice";
 import { NavLink } from "react-router-dom";
 import Preloader from "../Preloaders/Preloader/Preloader";
-import { toTakeAllDataForSort } from "../../store/reducers/genresSlice";
 
 const MangaData = () => {
   const dispatch = useDispatch();
-  const { preloaderState, allData } = useSelector(
+  const { preloaderState, allData, limit, offset } = useSelector(
     (state) => state.mainDataSlice
   );
 
   useEffect(() => {
-    dispatch(toTakeAllData());
+    dispatch(toTakeAllData({ limit: limit, offset: offset }));
     dispatch(toTakeAllDataForSort());
-  }, []);
+  }, [offset]);
   console.log(allData, "allData");
   return (
     <>

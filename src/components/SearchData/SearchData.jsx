@@ -1,40 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./SearchData.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash.debounce";
 import {
-  changeClearSearchState,
-  changeDataSearch,
+  toTakeAllData,
   toTakeSearchData,
 } from "../../store/reducers/mainDataSlice";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  changeClearSearchState,
+  changeDataSearch,
+  changeLookDataSearch,
+} from "../../store/reducers/searchSlice";
+import { toTakeAllDataForSort } from "../../store/reducers/genresSlice";
 
 const SearchData = () => {
   const dispatch = useDispatch();
-  const { dataSearch, clearSearchState } = useSelector(
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { allData, limit, offset } = useSelector(
     (state) => state.mainDataSlice
   );
+  const { dataSearch, clearSearchState, lookDataSearch } = useSelector(
+    (state) => state.searchSlice
+  );
+  const { dataForSort } = useSelector((state) => state.genresSlice);
 
-  const delayedSearch = debounce((dataSearch) => {
-    if (dataSearch !== "") {
-      dispatch(toTakeSearchData(dataSearch));
-    } else {
-      dispatch(toTakeSearchData(""));
-    }
-  }, 500);
+  useEffect(() => {
+    // dispatch(toTakeAllData({ limit: limit, offset: offset }));
+    dispatch(toTakeAllDataForSort());
+  }, []);
+
+  // const delayedSearch = debounce((dataSearch) => {
+  //   if (dataSearch !== "") {
+  //     dispatch(toTakeSearchData(dataSearch));
+  //   } else {
+  //     dispatch(toTakeSearchData(""));
+  //   }
+  // }, 500);
+  // второй вид поика
 
   useEffect(() => {
     if (dataSearch === "") {
-      dispatch(changeClearSearchState(false));
+      dispatch(changeClearSearchState(false)); // для просмотра значка крестик
+      dispatch(changeLookDataSearch(false)); // для просмотра данных поиска
     } else {
-      dispatch(changeClearSearchState(true));
+      dispatch(changeClearSearchState(true)); // для просмотра значка крестик
+      dispatch(changeLookDataSearch(true)); // для просмотра данных поиска
     }
-    delayedSearch(dataSearch);
-
-    // если выйти с это компоненты, то текст внутри функции delayedSearch исчезнет
-    return () => {
-      delayedSearch.cancel();
-    };
+    // delayedSearch(dataSearch);
+    // // если выйти с это компоненты, то текст внутри функции delayedSearch исчезнет
+    // return () => {
+    //   delayedSearch.cancel();
+    // };
   }, [dataSearch]);
+
+  const clickSearchData = (id) => {
+    if (location.pathname.includes("detailed")) {
+      navigate(`/`);
+      setTimeout(() => {
+        navigate(`/detailed/${id}`);
+      }, 100);
+    } else {
+      navigate(`/detailed/${id}`);
+    }
+    dispatch(changeLookDataSearch(false));
+    dispatch(changeDataSearch(""));
+  };
 
   return (
     <form className={styles.searchData}>
@@ -59,6 +91,25 @@ const SearchData = () => {
           onClick={() => setLookSearch(false)}
           value={dataSearch}
         />
+        {lookDataSearch && (
+          <label className={styles.selectSearch}>
+            {dataForSort?.map((item) =>
+              item.ru_name
+                .toLocaleLowerCase()
+                .includes(dataSearch.toLocaleLowerCase()) ? (
+                <p
+                  key={item.id}
+                  // to={`/detailed/${item.id}`}
+                  onClick={() => clickSearchData(item.id)}
+                >
+                  {item.ru_name}
+                </p>
+              ) : (
+                ""
+              )
+            )}
+          </label>
+        )}
         {clearSearchState && (
           <svg
             width="18"

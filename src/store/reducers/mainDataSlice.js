@@ -3,31 +3,38 @@ import axios from "axios";
 import { reductionMangaData } from "../../helpers/reductionArr";
 
 const initialState = {
-  dataSearch: "",
   allData: [],
   detailedData: {},
+  allPage: 0,
   preloaderState: true,
   miniPreloader: false,
-  clearSearchState: false,
+  paginationCards: 1,
+  limit: 12,
+  offset: 0,
 };
 
 export const toTakeAllData = createAsyncThunk(
   "toTakeAllData",
-  async (id, { dispatch }) => {
+  async (obj, { dispatch }) => {
     dispatch(changePreloaderState(false));
     try {
       const { data } = await axios({
         method: "GET",
-        url: `http://68.183.214.2:8666/api/v1/manga/`,
+        // url: `http://68.183.214.2:8666/api/v1/manga/`,
+        url: `http://68.183.214.2:8666/api/v1/manga/?limit=${obj.limit}&offset=${obj.offset}`,
+        // url: `http://68.183.214.2:8666/api/v1/manga/?limit=12&offset=0`,
       });
-      dispatch(changeAllData(data));
-      dispatch(changePreloaderState(true));
+      dispatch(changeAllData(data.results));
+      dispatch(changeAllPage(data.count)); // общее кол-во страниц
+      dispatch(changePreloaderState(true)); // закрытие preloadera
     } catch (error) {
       console.log(error);
       dispatch(changePreloaderState(false));
     }
   }
 );
+
+///NurdinDjumabekov_geeks
 
 export const toTakeDetailedData = createAsyncThunk(
   "toTakeDetailedData",
@@ -71,11 +78,8 @@ const mainDataSlice = createSlice({
   initialState,
   reducers: {
     changeAllData: (state, action) => {
-      // state.allData = reductionMangaData(action.payload);
-      state.allData = action.payload;
-    },
-    changeDataSearch: (state, action) => {
-      state.dataSearch = action.payload;
+      // state.allData = action.payload;
+      state.allData = reductionMangaData(action.payload);
     },
     changeDetailedData: (state, action) => {
       state.detailedData = action.payload;
@@ -83,21 +87,32 @@ const mainDataSlice = createSlice({
     changePreloaderState: (state, action) => {
       state.preloaderState = action.payload;
     },
-    changeClearSearchState: (state, action) => {
-      state.clearSearchState = action.payload;
-    },
     changeMiniPreloader: (state, action) => {
       state.miniPreloader = action.payload;
+    },
+    changePaginationCards: (state, action) => {
+      state.paginationCards = action.payload;
+    },
+    changeLimit: (state, action) => {
+      state.limit = action.payload;
+    },
+    changeOffset: (state, action) => {
+      state.offset = action.payload;
+    },
+    changeAllPage: (state, action) => {
+      state.allPage = action.payload;
     },
   },
 });
 export const {
-  changeDataSearch,
   changeAllData,
   changeDetailedData,
   changePreloaderState,
-  changeClearSearchState,
   changeMiniPreloader,
+  changePaginationCards,
+  changeLimit,
+  changeOffset,
+  changeAllPage,
 } = mainDataSlice.actions;
 
 export default mainDataSlice.reducer;

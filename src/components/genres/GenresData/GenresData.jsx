@@ -11,7 +11,8 @@ import {
 import { checkSortGenres } from "../../../helpers/checkSortGenres";
 import {
   changeAllData,
-  toTakeAllData,
+  changeAllPage,
+  changePaginationCards,
 } from "../../../store/reducers/mainDataSlice";
 import { sortTypeData } from "../../../helpers/sortTypeData";
 import SortTypes from "../SortGenres/SortTypes";
@@ -21,17 +22,21 @@ const GenresData = () => {
   const { dataForSort, genresLookState, allSortGenres } = useSelector(
     (state) => state.genresSlice
   );
+  const { allData } = useSelector((state) => state.mainDataSlice);
   useEffect(() => {
     dispatch(toTakeAllGenres());
   }, []);
 
   const sortData = (type) => {
+    dispatch(changePaginationCards(1));
     dispatch(toTakeAllDataForSort());
     if (type === "AllGenres") {
       dispatch(changeAllData(checkSortGenres(dataForSort, allSortGenres)));
     } else if (type === "SortType") {
       dispatch(changeAllData(sortTypeData(dataForSort, allSortGenres)));
     }
+    dispatch(changeAllPage(allData.length));
+    // console.log(allData.length);
     // console.log(type);
   };
   const clearSordgenres = () => {
