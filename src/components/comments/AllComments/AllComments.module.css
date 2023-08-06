@@ -57,6 +57,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40px;
+  width: 600px;
+  margin-bottom: 10px;
 }
 .allCcomments .allCcomments__inner ul li > div:nth-child(3) p {
   color: #878787;

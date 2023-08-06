@@ -63,7 +63,8 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.footer .footer__inner .footer__contacts div svg {
+.footer .footer__inner .footer__contacts div img {
+  display: block;
   width: 24px;
   height: 24px;
 }

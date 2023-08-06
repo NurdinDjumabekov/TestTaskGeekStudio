@@ -22,7 +22,6 @@ export const toTakeAllData = createAsyncThunk(
         method: "GET",
         // url: `http://68.183.214.2:8666/api/v1/manga/`,
         url: `http://68.183.214.2:8666/api/v1/manga/?limit=${obj.limit}&offset=${obj.offset}`,
-        // url: `http://68.183.214.2:8666/api/v1/manga/?limit=12&offset=0`,
       });
       dispatch(changeAllData(data.results));
       dispatch(changeAllPage(data.count)); // общее кол-во страниц
@@ -78,7 +77,6 @@ const mainDataSlice = createSlice({
   initialState,
   reducers: {
     changeAllData: (state, action) => {
-      // state.allData = action.payload;
       state.allData = reductionMangaData(action.payload);
     },
     changeDetailedData: (state, action) => {

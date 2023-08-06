@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./Pagination.module.css";
 import left_arrow from "../../assets/images/pagination/left_arrow.svg";
 import right_arrow from "../../assets/images/pagination/rigth_arrow.svg";
-
 import {
   changeOffset,
   changePaginationCards,
@@ -22,7 +21,6 @@ const Pagination = ({ allPage }) => {
       paginationCards
     )
   );
-  //   console.log(paginationCards);
 
   useEffect(() => {
     setPageArr(
@@ -49,8 +47,6 @@ const Pagination = ({ allPage }) => {
 
   const nowClickNumPagination = (page) => {
     dispatch(changePaginationCards(page));
-    // console.log(paginationCards, "paginationCards");
-    // console.log(page, "page");
     if (paginationCards < page) {
       dispatch(changeOffset(offset + 12));
     } else {

@@ -1,4 +1,4 @@
-.sortGenres .sortGenres__inner {
+.AllTypes .sortGenres__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,7 @@
   -webkit-transition: 0.8s;
   transition: 0.8s;
 }
-.sortGenres .sortGenres__inner button:nth-child(1) {
+.AllTypes .sortGenres__inner button:nth-child(1) {
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -24,7 +24,7 @@
   border: none;
   background: transparent;
 }
-.sortGenres .sortGenres__inner button:nth-child(2) {
+.AllTypes .sortGenres__inner button:nth-child(2) {
   color: #878787;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -44,17 +44,18 @@
           align-items: center;
   gap: 17px;
 }
-.sortGenres .sortGenres__inner button:nth-child(2) p {
+.AllTypes .sortGenres__inner button:nth-child(2) p {
   padding: 0 0 4px 0;
 }
-.sortGenres .sortGenres__inner button:nth-child(2) svg {
-  width: 11px;
-  height: 20px;
+.AllTypes .sortGenres__inner button:nth-child(2) img {
+  display: block;
+  width: 12px;
+  height: 24px;
 }
-.sortGenres .sortGenres__inner:hover {
+.AllTypes .sortGenres__inner:hover {
   background: #dbd8d8;
 }
-.sortGenres h3 {
+.AllTypes h3 {
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
@@ -63,10 +64,10 @@
   line-height: 35px;
   margin: 33px 0 10px;
 }
-.sortGenres ul {
+.AllTypes ul {
   height: 480px;
 }
-.sortGenres ul li {
+.AllTypes ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,12 +77,12 @@
   gap: 10px;
   margin: 0 0 10px 0;
 }
-.sortGenres ul li input {
+.AllTypes ul li input {
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
-.sortGenres ul li p {
+.AllTypes ul li p {
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;

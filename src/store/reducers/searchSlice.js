@@ -6,24 +6,6 @@ const initialState = {
   lookDataSearch: false,
 };
 
-// export const toTakeAllData = createAsyncThunk(
-//   "toTakeAllData",
-//   async (id, { dispatch }) => {
-//     dispatch(changePreloaderState(false));
-//     try {
-//       const { data } = await axios({
-//         method: "GET",
-//         url: `http://68.183.214.2:8666/api/v1/manga/`,
-//       });
-//       dispatch(changeAllData(data));
-//       dispatch(changePreloaderState(true));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(changePreloaderState(false));
-//     }
-//   }
-// );
-
 const searchSlice = createSlice({
   name: "searchSlice",
   initialState,

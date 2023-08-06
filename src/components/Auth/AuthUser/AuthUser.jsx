@@ -7,6 +7,7 @@ import {
   changeLookAuth,
   changeStateTypeAuth,
 } from "../../../store/reducers/authSlice";
+import arrow from "../../../assets/images/Auth/arrow.svg";
 
 const AuthUser = () => {
   const { lookAuth, stateTypeAuth } = useSelector((state) => state.authSlice);
@@ -34,34 +35,9 @@ const AuthUser = () => {
           ></div>
           <div className={styles.registration__parent}>
             <div className={styles.block_push}>
-              <svg
-                width="24"
-                height="23"
-                viewBox="0 0 24 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                onClick={() => dispatch(changeLookAuth(false))}
-              >
-                <line
-                  x1="21.2131"
-                  y1="2.12132"
-                  x2="2.12125"
-                  y2="21.2132"
-                  stroke="black"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-                <line
-                  x1="1.5"
-                  y1="-1.5"
-                  x2="28.5"
-                  y2="-1.5"
-                  transform="matrix(0.707107 0.707107 0.707107 -0.707107 2.21313 0)"
-                  stroke="black"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <div onClick={() => dispatch(changeLookAuth(false))}>
+                <img src={arrow} alt="arrow" />
+              </div>
             </div>
             <div>
               <button

@@ -15,6 +15,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 150px;
 }
 .detailed .detailed__inner .detailed__mainInfo {
   display: -webkit-box;
@@ -114,6 +115,16 @@
 }
 .detailed .detailed__inner .detailed__mainInfo > ul li:nth-child(1) {
   margin: 0;
+}
+.detailed .detailed__inner .detailed__mainInfo > ul li:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.detailed .detailed__inner .detailed__mainInfo > ul li:last-child b {
+  line-height: 35px;
 }
 .detailed .detailed__inner .line {
   width: 100%;

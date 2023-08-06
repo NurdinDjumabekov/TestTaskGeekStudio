@@ -4,6 +4,7 @@ import mainDataSlice from "./reducers/mainDataSlice";
 import commentSlice from "./reducers/commentSlice";
 import authSlice from "./reducers/authSlice";
 import searchSlice from "./reducers/searchSlice";
+import typesSlice from "./reducers/typesSlice";
 
 const reducer = combineReducers({
   genresSlice,
@@ -11,6 +12,7 @@ const reducer = combineReducers({
   commentSlice,
   authSlice,
   searchSlice,
+  typesSlice,
 });
 export const store = configureStore({
   reducer,

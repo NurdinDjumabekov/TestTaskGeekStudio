@@ -10,7 +10,7 @@ const AllComments = ({ id }) => {
   );
 
   const { nameUser } = useSelector((state) => state.authSlice);
-  // console.log(allComments);
+  console.log(allComments);
   return (
     <>
       <div className={styles.allCcomments}>
@@ -41,7 +41,7 @@ const AllComments = ({ id }) => {
                     </div>
                     <div className={styles.line_vertical}></div>
                     <div>
-                      <h5>{comment.name}</h5>
+                      <h5>{comment?.user.username}</h5>
                       <p>{comment.text}</p>
                     </div>
                   </li>

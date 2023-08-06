@@ -6,6 +6,7 @@ import {
   changeLookBlockAddComment,
 } from "../../../store/reducers/commentSlice";
 import { toTakeDetailedData } from "../../../store/reducers/mainDataSlice";
+import cross from "../../../assets/images/comments/cros.svg";
 
 const AddComments = ({ id }) => {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const AddComments = ({ id }) => {
   const { access } = useSelector((state) => state.authSlice);
   const sendRequest = async (e) => {
     e.preventDefault();
-    await dispatch(addComments({ data: data, id: id, access: access }));
-    await dispatch(changeLookBlockAddComment(false));
+    dispatch(addComments({ data: data, id: id, access: access }));
+    dispatch(changeLookBlockAddComment(false));
     // dispatch(toTakeDetailedData(id));
   };
   const { nameUser, nameImg } = useSelector((state) => state.authSlice);
@@ -41,27 +42,12 @@ const AddComments = ({ id }) => {
             />
             <button type="submit">Добавить</button>
           </form>
-          <svg
+          <div
+            className={styles.cross_block}
             onClick={() => dispatch(changeLookBlockAddComment(false))}
-            width="35"
-            height="35"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M8.46409 15.5354L15.5352 8.46436"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-            <path
-              d="M8.46409 8.46458L15.5352 15.5356"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
+            <img src={cross} alt="x" />
+          </div>
         </div>
       </div>
     </>

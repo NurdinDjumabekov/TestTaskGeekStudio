@@ -4,37 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addAllSortGenres,
   changeGenresLookState,
+  changeStatusBoolGenres,
   deleteAllSortGenres,
 } from "../../../store/reducers/genresSlice";
+import arrow_left from "../../../assets/images/sort/arrow_left.svg";
 
 const AllGenres = () => {
   const dispatch = useDispatch();
   const { allGenres } = useSelector((state) => state.genresSlice);
 
-  const inputCheckBox = (id, bool) => {
-    if (bool) {
+  const inputCheckBox = (id, boolInput) => {
+    if (boolInput) {
       dispatch(addAllSortGenres(id));
     } else {
       dispatch(deleteAllSortGenres(id));
     }
+    dispatch(changeStatusBoolGenres({ id, boolInput }));
   };
+
   return (
     <div className={styles.allGenres}>
       <button onClick={() => dispatch(changeGenresLookState(true))}>
-        <svg
-          width="17"
-          height="28"
-          viewBox="0 0 17 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M15 2L3 14L15 26"
-            stroke="#878787"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
+        <img src={arrow_left} alt="<" />
         <p>Назад</p>
       </button>
       <h2>Жанры </h2>
@@ -44,6 +35,7 @@ const AllGenres = () => {
             <input
               type="checkbox"
               onChange={(e) => inputCheckBox(genre.id, e.target.checked)}
+              checked={genre.bool}
             />
             <p>{genre.title}</p>
           </li>

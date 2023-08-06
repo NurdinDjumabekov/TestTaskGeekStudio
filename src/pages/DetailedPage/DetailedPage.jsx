@@ -6,6 +6,7 @@ import styles from "./DetailedPage.module.css";
 import { toTakeAllComments } from "../../store/reducers/commentSlice";
 import AllComments from "../../components/comments/AllComments/AllComments";
 import Preloader from "../../components/Preloaders/Preloader/Preloader";
+import { toTakeAllGenres } from "../../store/reducers/genresSlice";
 
 const DetailedPage = () => {
   const { preloaderState, detailedData } = useSelector(
@@ -18,7 +19,15 @@ const DetailedPage = () => {
     dispatch(toTakeDetailedData(id));
     dispatch(toTakeAllComments(id));
   }, [lookBlockAddComment]);
-  //   console.log(detailedData);
+  const a = [];
+
+  const { allGenres } = useSelector((state) => state.genresSlice);
+
+  useEffect(() => {
+    dispatch(toTakeAllGenres());
+  }, []);
+  console.log(allGenres);
+
   return (
     <>
       {preloaderState ? (
@@ -62,37 +71,23 @@ const DetailedPage = () => {
                   </li>
                   <li>
                     Жанр:
-                    <b>
-                      Юри,Повседневность, Постапокалиптика, Приключения,
-                      Психология, Романтика, Сверхъестественное
-                    </b>
-                    {/* <b>{detailedData?.genre[0]}</b> */}
+                    {allGenres?.map((i, index) => {
+                      if (detailedData?.genre.includes(i.id)) {
+                        return (
+                          <b key={i.id}>
+                            {i.title}
+                            {index === allGenres.length - 3 ? "." : ","}
+                          </b>
+                        );
+                      }
+                    })}
                   </li>
                 </ul>
               </div>
               <div className={styles.line}></div>
               <div className={styles.detailed_moreInfo}>
                 <h4>Синопсис</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-                  massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                  sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                  Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                  Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                  Curabitur pellentesque nibh nibh, at maximus ante fermentum
-                  sit amet. Pellentesque commodo lacus at sodales sodales.
-                  Quisque sagittis orci ut diam condimentum, vel euismod erat
-                  placerat. In iaculis arcu eros, eget tempus orci facilisis id.
-                  Praesent lorem orci, mattis non efficitur id, ultricies vel
-                  nibh. Sed volutpat lacus vitae gravida viverra. Fusce vel
-                  tempor elit. Proin tempus, magna id scelerisque vestibulum,
-                  nulla ex pharetra sapien, tempor posuere massa neque nec
-                  felis. Aliquam sem ipsum, vehicula ac tortor vel, egestas
-                  ullamcorper dui. Curabitur at risus sodales, tristique est id,
-                  euismod justo. Mauris nec leo non libero sodales lobortis.
-                  Quisque a neque pretium, dictum tellus vitae, euismod neque.
-                  Nulla facilisi.
-                </p>
+                <p>{detailedData?.description}</p>
               </div>
               <div className={styles.line}></div>
               <AllComments id={id} />

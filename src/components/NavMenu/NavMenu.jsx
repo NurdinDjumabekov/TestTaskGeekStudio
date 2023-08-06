@@ -11,23 +11,26 @@ const NavMenu = () => {
   // console.log(nameUser);
 
   return (
-    <div className={styles.navMenu}>
-      <div className="container">
-        <div className={styles.navMenu__inner}>
-          <NavLink to={"/"}>
-            <div>
-              <img src={logo} alt="logo" />
-            </div>
-            <div>
-              <h4>MangoRead</h4>
-              <p>Читай мангу с нами</p>
-            </div>
-          </NavLink>
-          <SearchData />
-          {nameUser === "" ? <AuthUser /> : <IconDataUser />}
+    <>
+      <div className={styles.pushBlock}></div>
+      <div className={styles.navMenu}>
+        <div className="container">
+          <div className={styles.navMenu__inner}>
+            <NavLink to={"/"}>
+              <div>
+                <img src={logo} alt="logo" />
+              </div>
+              <div>
+                <h4>MangoRead</h4>
+                <p>Читай мангу с нами</p>
+              </div>
+            </NavLink>
+            <SearchData />
+            {nameUser === "" ? <AuthUser /> : <IconDataUser />}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

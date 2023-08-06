@@ -96,9 +96,11 @@
   position: relative;
   border: none;
 }
-.registration__parent .block_push svg {
+.registration__parent .block_push > div {
   position: absolute;
   top: 31px;
   right: 56px;
   cursor: pointer;
+  width: 22px;
+  height: 22px;
 }
