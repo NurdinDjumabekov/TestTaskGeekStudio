@@ -5,6 +5,8 @@ import commentSlice from "./reducers/commentSlice";
 import authSlice from "./reducers/authSlice";
 import searchSlice from "./reducers/searchSlice";
 import typesSlice from "./reducers/typesSlice";
+import loginSLice from "./reducers/loginSlice";
+import registrationSLice from "./reducers/registrationSlice";
 
 const reducer = combineReducers({
   genresSlice,
@@ -13,6 +15,8 @@ const reducer = combineReducers({
   authSlice,
   searchSlice,
   typesSlice,
+  loginSLice,
+  registrationSLice,
 });
 export const store = configureStore({
   reducer,

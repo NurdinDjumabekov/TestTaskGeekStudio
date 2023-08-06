@@ -6,7 +6,7 @@ const initialState = {
   allData: [],
   detailedData: {},
   allPage: 0,
-  preloaderState: true,
+  preloaderState: false,
   miniPreloader: false,
   paginationCards: 1,
   limit: 12,

@@ -51,15 +51,16 @@ const SearchData = () => {
   return (
     <form className={styles.searchData}>
       <label className={styles.searchData__label}>
-        <div className={styles.loop}>
-          <img src={loop} alt="loop" />
-        </div>
+        <label className={styles.loop}>
+          {!clearSearchState && <img src={loop} alt="loop" />}
+        </label>
         <input
           type="text"
           placeholder="Placeholder"
           onChange={(e) => dispatch(changeDataSearch(e.target.value))}
           onClick={() => setLookSearch(false)}
           value={dataSearch}
+          className={clearSearchState && styles.activeInput}
         />
         {lookDataSearch && (
           <label className={styles.selectSearch}>
@@ -70,10 +71,14 @@ const SearchData = () => {
                 <p key={item.id} onClick={() => clickSearchData(item.id)}>
                   {item.ru_name}
                 </p>
-              ) : (
-                ""
-              )
+              ) : null
             )}
+            {dataForSort?.every(
+              (item) =>
+                !item.ru_name
+                  .toLocaleLowerCase()
+                  .includes(dataSearch.toLocaleLowerCase())
+            ) && <p>нет результатов</p>}
           </label>
         )}
         {clearSearchState && (

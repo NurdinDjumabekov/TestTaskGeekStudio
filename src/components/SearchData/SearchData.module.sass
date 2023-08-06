@@ -6,15 +6,16 @@
     // background: red
     .searchData__label
         position: relative
+        display: block
         // background: green
-        height: 100%
-        width: 100%
+        height: 56px
+        width: 340px
         input
             border-radius: 8px
             border: 2px solid #878787
-            background: #FFF
-            width: 340px
-            height: 56px
+            background: #fff
+            width: 100%
+            height: 100%
             padding: 0 40px 0 35px
             color: #919191
             font-family: 'Montserrat', sans-serif
@@ -22,7 +23,10 @@
             font-style: normal
             font-weight: 400
             line-height: 20px
+        .activeInput
+            padding: 0 40px 0 20px
         .loop
+            display: block
             position: absolute
             left: 20px
             top: 50%
@@ -43,9 +47,9 @@
             z-index: 12
             top: 60px
             overflow-y: scroll
-            height: 150px
+            max-height: 180px
             width: 340px
-            padding: 5px 20px
+            padding: 5px 20px 25px
             box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20)
             p
                 // display: inline

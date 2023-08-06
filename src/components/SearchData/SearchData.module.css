@@ -6,15 +6,16 @@
 }
 .searchData .searchData__label {
   position: relative;
-  height: 100%;
-  width: 100%;
+  display: block;
+  height: 56px;
+  width: 340px;
 }
 .searchData .searchData__label input {
   border-radius: 8px;
   border: 2px solid #878787;
-  background: #FFF;
-  width: 340px;
-  height: 56px;
+  background: #fff;
+  width: 100%;
+  height: 100%;
   padding: 0 40px 0 35px;
   color: #919191;
   font-family: "Montserrat", sans-serif;
@@ -23,7 +24,11 @@
   font-weight: 400;
   line-height: 20px;
 }
+.searchData .searchData__label .activeInput {
+  padding: 0 40px 0 20px;
+}
 .searchData .searchData__label .loop {
+  display: block;
   position: absolute;
   left: 20px;
   top: 50%;
@@ -46,9 +51,9 @@
   z-index: 12;
   top: 60px;
   overflow-y: scroll;
-  height: 150px;
+  max-height: 180px;
   width: 340px;
-  padding: 5px 20px;
+  padding: 5px 20px 25px;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
