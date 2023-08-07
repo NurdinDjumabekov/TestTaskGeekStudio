@@ -47,6 +47,7 @@ const AllTypes = () => {
         {allTypes?.map((type) => (
           <li key={type.id}>
             <input
+              className={styles.checkBox}
               type="checkbox"
               onChange={(e) =>
                 inputCheckBox(type.id, type.title, e.target.checked)

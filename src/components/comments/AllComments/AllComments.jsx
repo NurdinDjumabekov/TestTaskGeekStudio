@@ -10,7 +10,7 @@ const AllComments = ({ id }) => {
   );
 
   const { nameUser } = useSelector((state) => state.authSlice);
-  console.log(allComments);
+  // console.log(allComments);
   return (
     <>
       <div className={styles.allCcomments}>

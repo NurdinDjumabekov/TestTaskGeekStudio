@@ -3,24 +3,34 @@
     // background: green
     align-items: center
     gap: 25px
-    p
-        color: #000
-        text-align: right
-        font-family: "Montserrat",sans-serif
-        font-size: 24px
-        font-style: normal
-        font-weight: 400
-        line-height: 35px 
-        // background: red
-        height: 35px
-        width: 200px
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap   
-    > div
-        border-radius: 50%
-        width: 80px
-        height: 80px
-        img
+    cursor: pointer
+    position: relative
+    div
+        display: flex
+        align-items: center
+        gap: 25px
+        p
+            color: #000
+            text-align: right
+            font-family: "Montserrat",sans-serif
+            font-size: 24px
+            font-style: normal
+            font-weight: 400
+            line-height: 35px 
+            // background: red
+            height: 35px
+            width: 200px
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap   
+        .img_user
             border-radius: 50%
-            object-fit: cover
+            width: 80px
+            height: 80px
+            img
+                border-radius: 50%
+                object-fit: cover
+    .arrow_bottom
+        width: 24px
+        height: 34px
+        transform: rotate(180deg)

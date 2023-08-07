@@ -56,6 +56,8 @@
   padding: 5px 20px 25px;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  -webkit-animation: search 0.8s;
+          animation: search 0.8s;
 }
 .searchData .searchData__label .selectSearch p {
   font-size: 20px;
@@ -69,6 +71,22 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+}
+@-webkit-keyframes search {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes search {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .searchData .searchData__label .cross {
   position: absolute;

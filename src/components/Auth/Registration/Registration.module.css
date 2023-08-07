@@ -1,3 +1,7 @@
+.registrationParent {
+  -webkit-animation: registration 1.5s;
+          animation: registration 1.5s;
+}
 .registrationParent form {
   width: 500px;
   margin: 0 auto;
@@ -115,4 +119,20 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: normal;
+}
+@-webkit-keyframes registration {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes registration {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -19,13 +19,8 @@ const MangaData = () => {
     dispatch(toTakeAllData({ limit: limit, offset: offset }));
     dispatch(toTakeAllDataForSort());
   }, [offset]);
-  console.log(allData, "allData");
+  // console.log(allData, "allData");
 
-  // useEffect(() => {
-  //   dispatch(toTakeAllData({ limit: 12, offset: 0 }));
-  //   dispatch(changePaginationCards(1));
-  //   dispatch(toTakeAllDataForSort());
-  // }, []);
   return (
     <>
       {preloaderState ? (

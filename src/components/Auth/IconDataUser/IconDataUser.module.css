@@ -6,8 +6,19 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 25px;
+  cursor: pointer;
+  position: relative;
 }
-.iconDataUser p {
+.iconDataUser div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+.iconDataUser div p {
   color: #000;
   text-align: right;
   font-family: "Montserrat", sans-serif;
@@ -21,13 +32,19 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.iconDataUser > div {
+.iconDataUser div .img_user {
   border-radius: 50%;
   width: 80px;
   height: 80px;
 }
-.iconDataUser > div img {
+.iconDataUser div .img_user img {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.iconDataUser .arrow_bottom {
+  width: 24px;
+  height: 34px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }

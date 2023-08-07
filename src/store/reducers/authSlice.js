@@ -18,6 +18,7 @@ const initialState = {
   nameImg: localStorage.getItem("nameImg")
     ? localStorage.getItem("nameImg")
     : "",
+  looklogOut: false,
 };
 
 export const sendRegistrationUser = createAsyncThunk(
@@ -115,6 +116,9 @@ const authSlice = createSlice({
     changeNameImg: (state, action) => {
       state.nameImg = action.payload;
     },
+    changeLooklogOut: (state, action) => {
+      state.looklogOut = action.payload;
+    },
   },
 });
 export const {
@@ -124,6 +128,7 @@ export const {
   changeRefresh,
   changeNameUser,
   changeNameImg,
+  changeLooklogOut,
 } = authSlice.actions;
 
 export default authSlice.reducer;

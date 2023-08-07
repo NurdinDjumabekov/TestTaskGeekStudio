@@ -47,7 +47,6 @@ const SearchData = () => {
     dispatch(changeLookDataSearch(false));
     dispatch(changeDataSearch(""));
   };
-
   return (
     <form className={styles.searchData}>
       <label className={styles.searchData__label}>
@@ -58,9 +57,8 @@ const SearchData = () => {
           type="text"
           placeholder="Placeholder"
           onChange={(e) => dispatch(changeDataSearch(e.target.value))}
-          onClick={() => setLookSearch(false)}
           value={dataSearch}
-          className={clearSearchState && styles.activeInput}
+          className={clearSearchState ? styles.activeInput : ""}
         />
         {lookDataSearch && (
           <label className={styles.selectSearch}>

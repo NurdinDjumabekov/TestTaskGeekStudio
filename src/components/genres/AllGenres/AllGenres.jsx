@@ -21,7 +21,6 @@ const AllGenres = () => {
     }
     dispatch(changeStatusBoolGenres({ id, boolInput }));
   };
-
   return (
     <div className={styles.allGenres}>
       <button onClick={() => dispatch(changeGenresLookState(true))}>

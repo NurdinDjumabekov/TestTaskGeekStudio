@@ -1,4 +1,5 @@
 .allGenres
+    animation: genres 1.5s
     > button
         display: flex
         align-items: center
@@ -40,8 +41,6 @@
             input
                 width: 35px
                 height: 35px
-                // border: 1px solid red
-                // background-color: green
                 cursor: pointer
             p
                 color: #000
@@ -56,3 +55,13 @@
                 width: 85%
                 text-overflow: ellipsis
                 white-space: nowrap
+    @keyframes genres
+        0%
+            opacity: 0.1
+        100%
+            opacity: 1
+    ul::-webkit-scrollbar 
+        width: 10px
+    ul::-webkit-scrollbar-thumb 
+        background: #D5D6D5
+        border-radius: 8px

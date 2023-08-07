@@ -72,6 +72,7 @@
   display: -ms-flexbox;
   display: flex;
   width: 650px;
+  margin-top: 50px;
 }
 .addComments .addComments__inner form > input {
   min-width: 480px !important;

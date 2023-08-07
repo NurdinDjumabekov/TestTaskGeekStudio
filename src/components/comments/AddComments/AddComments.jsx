@@ -12,11 +12,11 @@ const AddComments = ({ id }) => {
   const dispatch = useDispatch();
   const [data, setData] = useState("");
   const { access } = useSelector((state) => state.authSlice);
-  const sendRequest = async (e) => {
+  const sendRequest = (e) => {
     e.preventDefault();
     dispatch(addComments({ data: data, id: id, access: access }));
     dispatch(changeLookBlockAddComment(false));
-    // dispatch(toTakeDetailedData(id));
+    dispatch(toTakeDetailedData(id));
   };
   const { nameUser, nameImg } = useSelector((state) => state.authSlice);
 

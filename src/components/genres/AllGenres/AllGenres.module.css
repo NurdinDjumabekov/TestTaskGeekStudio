@@ -1,3 +1,7 @@
+.allGenres {
+  -webkit-animation: genres 1.5s;
+          animation: genres 1.5s;
+}
 .allGenres > button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,4 +70,27 @@
   width: 85%;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+@-webkit-keyframes genres {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes genres {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.allGenres ul::-webkit-scrollbar {
+  width: 10px;
+}
+.allGenres ul::-webkit-scrollbar-thumb {
+  background: #D5D6D5;
+  border-radius: 8px;
 }

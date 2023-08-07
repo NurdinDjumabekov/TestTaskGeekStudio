@@ -15,18 +15,18 @@ const DetailedPage = () => {
   const { lookBlockAddComment } = useSelector((state) => state.commentSlice);
   const dispatch = useDispatch();
   const { id } = useParams();
+
   useEffect(() => {
     dispatch(toTakeDetailedData(id));
     dispatch(toTakeAllComments(id));
   }, [lookBlockAddComment]);
-  const a = [];
 
   const { allGenres } = useSelector((state) => state.genresSlice);
 
   useEffect(() => {
     dispatch(toTakeAllGenres());
   }, []);
-  console.log(allGenres);
+  // console.log(allGenres);
 
   return (
     <>
@@ -72,11 +72,11 @@ const DetailedPage = () => {
                   <li>
                     Жанр:
                     {allGenres?.map((i, index) => {
-                      if (detailedData?.genre.includes(i.id)) {
+                      if (detailedData?.genre?.includes(i.id)) {
                         return (
                           <b key={i.id}>
                             {i.title}
-                            {index === allGenres.length - 3 ? "." : ","}
+                            {index === allGenres?.length - 1 ? "." : ","}
                           </b>
                         );
                       }

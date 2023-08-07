@@ -4,23 +4,34 @@ import styles from "./MainPage.module.css";
 import MangaData from "../../components/MangaData/MangaData";
 import Pagination from "../../components/Pagination/Pagination";
 import { useDispatch, useSelector } from "react-redux";
-import { toTakeAllData } from "../../store/reducers/mainDataSlice";
-import { toTakeAllDataForSort } from "../../store/reducers/typesSlice";
+import {
+  changePaginationCards,
+  toTakeAllData,
+} from "../../store/reducers/mainDataSlice";
+import {
+  clearAlltypes,
+  toTakeAllDataForSort,
+} from "../../store/reducers/typesSlice";
+import { clearAllGenres } from "../../store/reducers/genresSlice";
 
 const MainPage = () => {
   const dispatch = useDispatch();
-
   const { limit, offset, allPage } = useSelector(
     (state) => state.mainDataSlice
   );
-  // const { dataForSort } = useSelector((state) => state.typesSlice);
 
   useEffect(() => {
     dispatch(toTakeAllData({ limit: limit, offset: offset }));
-    // dispatch(toTakeAllDataForSort());
+    dispatch(toTakeAllDataForSort());
   }, [offset]);
-  // console.log(Math.ceil(dataForSort.length / 12)); // для округления числа в большую сторону
-  // console.log(allPage);
+  useEffect(() => {
+    // при появлении компоненты всё сбрасывается
+    dispatch(toTakeAllData({ limit: limit, offset: offset }));
+    dispatch(toTakeAllDataForSort());
+    dispatch(clearAlltypes());
+    dispatch(clearAllGenres());
+    dispatch(changePaginationCards(1));
+  }, []);
   return (
     <div className={styles.mainPage__parent}>
       <div className="container">
@@ -29,6 +40,7 @@ const MainPage = () => {
           <MangaData />
         </div>
         <Pagination allPage={Math.ceil(allPage / 12)} />
+        {/* для округления числа в большую сторону */}
       </div>
     </div>
   );

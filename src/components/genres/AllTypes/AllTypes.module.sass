@@ -1,4 +1,5 @@
 .AllTypes
+    animation: types 1.5s
     .sortGenres__inner
         display: flex
         justify-content: space-between
@@ -53,11 +54,11 @@
             align-items: center
             gap: 10px
             margin: 0 0 10px 0
-            input
+            > .checkBox
                 width: 35px
                 height: 35px
-                // border: 1px solid red
-                // background-color: green
+                border: 1px solid red !important
+                background: green !important
                 cursor: pointer
             p
                 color: #000
@@ -72,3 +73,8 @@
                 width: 85%
                 text-overflow: ellipsis
                 white-space: nowrap
+    @keyframes types
+        0%
+            opacity: 0.1
+        100%
+            opacity: 1
