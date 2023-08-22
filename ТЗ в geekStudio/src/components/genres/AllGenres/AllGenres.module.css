@@ -1,0 +1,96 @@
+.allGenres {
+  -webkit-animation: genres 1.5s;
+          animation: genres 1.5s;
+}
+.allGenres > button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.allGenres > button p {
+  color: #878787;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+}
+.allGenres > button img {
+  display: block;
+  width: 12px;
+  height: 24px;
+}
+.allGenres h2 {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.allGenres ul {
+  overflow-y: scroll;
+  height: 500px;
+  margin: 10px 0;
+}
+.allGenres ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin: 0 0 10px 0;
+}
+.allGenres ul li input {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.allGenres ul li p {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  overflow: hidden;
+  width: 85%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@-webkit-keyframes genres {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes genres {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.allGenres ul::-webkit-scrollbar {
+  width: 10px;
+}
+.allGenres ul::-webkit-scrollbar-thumb {
+  background: #D5D6D5;
+  border-radius: 8px;
+}

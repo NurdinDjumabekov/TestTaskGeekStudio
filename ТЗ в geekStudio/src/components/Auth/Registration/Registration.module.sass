@@ -1,0 +1,111 @@
+.registrationParent
+    animation: registration 1.5s
+
+    form
+        width: 500px
+        margin: 0 auto
+        .labelForImg
+            display: block
+            padding: 0 0 40px 0
+            width: 50%
+            margin: 0 auto
+            cursor: pointer
+            img
+                display: block
+                width: 181px
+                height: 181px
+                border-radius: 50%
+                margin: 40px auto 0
+                object-fit: cover
+            input
+                width: 0
+                height: 0
+                background: transparent
+                border: none
+            button
+                background: transparent
+                border: none
+                color: #000
+                display: block
+                margin: 0 auto 0 
+                font-family: "Montserrat",sans-serif
+                font-size: 16px
+                font-style: normal
+                font-weight: 400
+                line-height: normal
+                text-transform: uppercase
+        .passwordLook_registration
+            position: relative
+            display: block
+            width: 100%
+            margin-bottom: 30px
+            input
+                margin: 0
+                padding: 0 50px 0 15px
+            img
+                display: block
+                width: 34px
+                height: 34px
+                position: absolute
+                right: -5px
+                top: 50%
+                transform: translate(-50%,-50%)
+                cursor: pointer
+        input
+            width: 100%
+            padding: 0 15px
+            height: 52px
+            border-radius: 8px
+            border: 1px solid #000
+            margin: 0 0 30px 0
+            color: #878787
+            font-family: "Montserrat",sans-serif
+            font-size: 24px
+            font-style: normal
+            font-weight: 400
+            line-height: 35px 
+        input:placeholder
+            color: #878787
+            font-family: "Montserrat",sans-serif
+            font-size: 24px
+            font-style: normal
+            font-weight: 400
+            line-height: 35px 
+        button
+            width: 100%
+            padding: 15px 0
+            color: #FFF
+            font-family: "Montserrat",sans-serif
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+            text-transform: uppercase
+            border-radius: 8px
+            background: #AD02E0
+            border: none
+        .disableBtn
+            opacity: 0.5
+            cursor: not-allowed
+        .emptyInput__names
+            display: block
+            margin: -8px 0 20px
+            text-align: center
+            font-size: 20px
+            font-family: "Montserrat",sans-serif
+            font-weight: 500
+            line-height: normal
+        .emptyInput__password
+            display: block
+            margin: -8px 0 20px
+            text-align: center
+            font-size: 18px
+            font-family: "Montserrat",sans-serif
+            font-weight: 500
+            line-height: normal
+
+    @keyframes registration
+        0%
+            opacity: 0.1
+        100%
+            opacity: 1

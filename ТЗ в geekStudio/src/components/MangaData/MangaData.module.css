@@ -1,0 +1,66 @@
+.mangaData {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.mangaData a {
+  display: block;
+  width: 190px;
+  height: 220px;
+  border-radius: 16px;
+  position: relative;
+  border: 1px solid gray;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+.mangaData a img {
+  border-radius: 16px;
+  opacity: 0.6;
+}
+.mangaData a > div {
+  padding: 0 10px 10px 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.mangaData a > div p {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 11px 0;
+}
+.mangaData a > div h4 {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mangaData .no_text {
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+  color: #000;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

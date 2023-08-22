@@ -1,0 +1,96 @@
+.authBlock
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 15px
+    button
+        padding: 15px 40px
+        border-radius: 8px
+        background: #AD02E0
+        color: #FFF
+        font-family: 'Montserrat', sans-serif
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        text-transform: uppercase
+        border: none
+        cursor: pointer
+        border: 3px solid #AD02E0
+        transition: 0.5s
+    button:nth-child(1)
+        background: #fff
+        color: #AD02E0
+        transition: 0.5s
+    button:nth-child(1):hover
+        background: #AD02E0
+        color: #fff
+    button:nth-child(2):hover
+        background: #73218b
+.registration_shadow
+    position: fixed
+    height: 100vh
+    width: 100%
+    background: #dad5d5
+    opacity: 0.2
+    top: 0
+    left: 0
+    z-index: 10
+.registration__parent
+    position: fixed
+    // height: 760px
+    width: 600px
+    background: #fff
+    border-radius: 30px
+    left: 0
+    z-index: 11
+    top: 45%
+    left: 50%
+    transform: translate(-50%, -50%)
+    padding: 0px 0 66px 0
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.20)
+    animation: auth 1s
+
+    .text_congratulation
+        font-size: 25px
+        font-family: "Montserrat",sans-serif
+        font-style: normal
+        font-weight: 400
+        line-height: 35px
+        text-align: center  
+        padding: 40px 0 0 0
+    > div
+        border-bottom: 2px solid #878787
+        width: 500px
+        margin: 0 auto
+        display: flex
+        gap: 30px
+        > button
+            color: #000
+            font-family: "Montserrat",sans-serif
+            font-size: 24px
+            font-style: normal
+            font-weight: 400
+            line-height: 35px 
+            border: none
+            background-color: transparent
+        .active_btn
+            // text-decoration: solid underline purple 5px
+            border-bottom: 5px solid #AD02E0
+    .block_push
+        height: 60px
+        width: 100%
+        position: relative
+        border: none
+        > div
+            position: absolute
+            top: 31px
+            right: 56px
+            cursor: pointer
+            width: 22px
+            height: 22px
+    @keyframes auth
+        0%
+            opacity: 0.1
+        100%
+            opacity: 1
