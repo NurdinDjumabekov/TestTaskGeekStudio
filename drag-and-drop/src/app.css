@@ -1,0 +1,8 @@
+.imgBlock {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
