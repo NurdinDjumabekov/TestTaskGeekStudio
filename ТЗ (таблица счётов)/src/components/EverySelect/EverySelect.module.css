@@ -1,0 +1,22 @@
+.everySelect {
+  padding: 12px 16px;
+  border: 1px solid #d9d9d9;
+  /* border-radius: 8px; */
+  cursor: pointer;
+}
+.everySelect__inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.everySelect__title {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.88);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+}
+.active_arrow {
+  transition: 0.5s;
+  transform: rotate(90deg);
+}

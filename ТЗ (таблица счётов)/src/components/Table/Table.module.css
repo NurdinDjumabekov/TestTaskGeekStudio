@@ -1,0 +1,42 @@
+.table {
+  background: #fff !important;
+  animation: lookBlock 1s;
+}
+.table > div {
+  border: 1px solid #fafafa;
+  border-radius: 8px;
+  text-align: center;
+  color-scheme: light;
+  min-height: 800px;
+  background-color: #fafafa !important;
+  grid-template-rows: repeat(100, 1fr) !important;
+  /* grid-template-columns: auto !important; */
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+.table > div > div {
+  background-color: #fafafa !important;
+  color: rgba(0, 0, 0, 0.76);
+  border: 1px solid transparent !important;
+  /* border: 1px solid #f0f0; */
+  background: red !important;
+}
+.table > div > div > div {
+  background-color: #fafafa !important;
+  color: rgba(0, 0, 0, 0.76);
+  border: 1px solid transparent !important;
+  /* width: 200px; */
+  /* background: red !important; */
+}
+.table > div > div > div > div {
+  background: red !important;
+}
+@keyframes lookBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

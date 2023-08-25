@@ -1,0 +1,47 @@
+.tableScroll {
+  background: #fff;
+  animation: lookBlock1 1s;
+}
+.tableScroll > div {
+  border: 1px solid #fafafa;
+  border-radius: 8px;
+  text-align: center;
+  color-scheme: light;
+  margin: 10px 0;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.tableScroll > div > div {
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.76);
+  border: 1px solid #f0f0;
+}
+
+.tableScroll > div > div > div {
+  line-height: 0;
+  display: block;
+  border: 1px solid #f0f0f0;
+  padding: 20px 16px;
+  margin: 0px 0px;
+  box-sizing: initial !important;
+}
+
+.tableScroll [role="columnheader"]:first-child {
+  z-index: 4 !important;
+  width: 200px;
+}
+
+@keyframes lookBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .grid_role {
+  grid-template-columns: inherit !important;
+} */
