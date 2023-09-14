@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start-index": "node index.js",
+    "start-nurdin": "node nurdin.js"
   },
   "author": "Nurdin",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0"
   }
 }

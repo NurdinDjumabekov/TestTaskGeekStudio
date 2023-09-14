@@ -1,3 +1,31 @@
-h1 {
-  background-color: red;
+#root {
+}
+
+/* .divParent {
+  border: 1px solid black;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+/* .title {
+  width: 150px;
+} */
+
+#grid td.w2ui-grid-data > div {
+  text-align: center;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  white-space: normal;
+  font-size: 14px !important;
+  line-height: normal !important;
 }
