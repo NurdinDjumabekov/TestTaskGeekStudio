@@ -12,154 +12,12 @@
   </body>
 </html> -->
 
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>W2UI Demo: combo/1</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <div id="main" style="width: 100%; height: 800px"></div>
-
-    <script type="module">
-      import {
-        w2layout,
-        w2sidebar,
-        w2grid,
-        query,
-      } from "https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js";
-
-      let config = {
-        layout: {
-          name: "layout",
-          padding: 0,
-        },
-        sidebar: {
-          name: "sidebar",
-          onClick(event) {
-            layout.html("main", grid1);
-          },
-        },
-        grid1: {
-          name: "grid1",
-          columns: [
-            { field: "fname", text: "First Name", size: "290px" },
-            { field: "lname", text: "Last Name", size: "180px" },
-            { field: "email", text: "Email", size: "200px" },
-            { field: "sdate", text: "Start Date", size: "120px" },
-            { field: "sdate", text: "Start Date", size: "120px" },
-            { field: "sdate", text: "Start Date", size: "120px" },
-            { field: "sdate", text: "Start Date", size: "120px" },
-          ],
-          records: [
-            {
-              recid: 1,
-              fname:
-                "Разметка HTMLчто такое HTMLтеги, атрибуты, значениябазовые элементыОсновы CSSпринцип работы CSSCSS-селекторыбазовые селекторы (элементы, классы, ID)Figmaвыбор элементаразмеры и отступыпросмотр стилей элементаэкспорт ассетов атрибуты, значениябазовые элементыОсновы CSSпринцип работы CSSCSS-селекторыбазовые селекторы (элементы, классы, ID)Figmaвыбор элементаразмеры и отступыпросмотр стилей элементаэкспорт ассетов",
-              lname: "Doe",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 2,
-              fname: "Stuart",
-              lname: "Motzart",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 3,
-              fname: "Jin",
-              lname: "Franson",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 4,
-              fname: "Susan",
-              lname: "Ottie",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 5,
-              fname: "Kelly",
-              lname: "Silver",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 6,
-              fname: "Francis",
-              lname: "Gatos",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 7,
-              fname: "Mark",
-              lname: "Welldo",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 8,
-              fname: "Thomas",
-              lname: "Bahh",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 9,
-              fname: "Sergei",
-              lname: "Rachmaninov",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 10,
-              fname: "Sergei",
-              lname: "Rachmaninov",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 11,
-              fname: "Sergei",
-              lname: "Rachmaninov",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-            {
-              recid: 12,
-              fname: "Sergei",
-              lname: "Rachmaninov",
-              email: "jdoe@gmail.com",
-              sdate: "4/3/2012",
-            },
-          ],
-        },
-      };
-      let layout = new w2layout(config.layout);
-      let sidebar = new w2sidebar(config.sidebar);
-      let grid1 = new w2grid(config.grid1);
-      // initialization
-      layout.render("#main");
-      layout.html("left", sidebar);
-      layout.html("main", grid1);
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <title>W2UI Demo: grid/27</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -168,154 +26,38 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div id="grid" style="width: 550px; height: 550px"></div>
-    <script type="module">
-      import { w2grid } from "https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js";
-      let grid = new w2grid({
-        name: "grid",
-        box: "#grid",
-        // show: {
-        //   lineNumbers: true,
-        // },
-        columns: [
-          { field: "fname", text: "First Name", size: "150px" },
-          { field: "lname", text: "Last Name", size: "150px" },
-          { field: "email", text: "Email", size: "200px" },
-          { field: "sdate", text: "Start Date", size: "200px" },
-        ],
-        records: [
-          {
-            recid: 1,
-            fname:
-              "John https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.h https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js  https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js v https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js v https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.jsttps://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js.min.js https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js",
-            lname: `<div><h1>nurdin</h1>
-              <p>nurdin</p>
-              </div>`,
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-            // w2ui: { style: "background-color: #C2F5B4" },
-          },
-          {
-            recid: 2,
-            fname: "Stuart",
-            lname: "Motzart",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 3,
-            fname: "Jin",
-            lname: "Franson",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 4,
-            fname: "Susan",
-            lname: "Ottie",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 5,
-            fname: "Kelly",
-            lname: "Silver",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 6,
-            fname: "Francis",
-            lname: "Gatos",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 7,
-            fname: "Mark",
-            lname: "Welldo",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 8,
-            fname: "Thomas",
-            lname: "Bahh",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 9,
-            fname: "Sergei",
-            lname: "Rachmaninov",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 11,
-            fname: "John",
-            lname: "Doe",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 12,
-            fname: "Stuart",
-            lname: "Motzart",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 13,
-            fname: "Jin",
-            lname: "Franson",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 14,
-            fname: "Susan",
-            lname: "Ottie",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 15,
-            fname: "Kelly",
-            lname: "Silver",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 16,
-            fname: "Francis",
-            lname: "Gatos",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 17,
-            fname: "Mark",
-            lname: "Welldo",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 18,
-            fname: "Thomas",
-            lname: "Bahh",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-          {
-            recid: 19,
-            fname: "Sergei",
-            lname: "Rachmaninov",
-            email: "jdoe@gmail.com",
-            sdate: "4/3/2012",
-          },
-        ],
-      });
-    </script>
+    <div id="root" style="width: 100%; height: 750px"></div>
+    <script type="module" src="/js/app.js"></script>
   </body>
 </html>
+
+<!-- records: [
+    {
+      recid: 1,
+      start: "Вёрстка",
+      Intern: `
+              <h2>Разметка HTML</h2>
+              <i>что такое HTML
+              теги, атрибуты, значения
+              базовые элементы</i>
+              <h2>Основы CSS</h2>
+              <i>принцип работы CSS</i>
+              <h2>CSS-селекторы</h2>
+              <i>базовые селекторы (элементы, классы, ID)</i>
+              `,
+      Junior: `<h2>Разметка HTML</h2>
+              <i>что такое HTML
+              теги, атрибуты, значения
+              базовые элементы</i>
+              <h2>Основы CSS</h2>
+              <i>принцип работы CSS</i>
+              <h2>CSS-селекторы</h2>
+              <i>базовые селекторы (элементы, классы, ID)</i>
+              `,
+      JuniorPlus: `<h2>Разметка HTML</h2>
+              <i>что такое HTML
+              теги, атрибуты, значения
+              базовые элементы</i>
+              `,
+    },
+  ], -->

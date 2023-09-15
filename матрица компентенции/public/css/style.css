@@ -16,16 +16,37 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
 }
-/* .title {
-  width: 150px;
-} */
 
-#grid td.w2ui-grid-data > div {
-  text-align: center;
+#root td.w2ui-grid-data > div {
   height: auto !important;
   max-height: none !important;
   overflow: visible !important;
   white-space: normal;
   font-size: 14px !important;
   line-height: normal !important;
+  /* background: gray !important; */
+  padding: 15px 7px;
+}
+/* #root .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-odd,
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd {
+  border: 2px solid #000 !important;
+} */
+i {
+  color: #010101;
+  margin: 10px 0 0 10px !important;
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
+  font-size: 14px;
+  line-height: 25px !important;
+  display: block;
+  font-weight: 800 !important;
+  text-indent: initial !important;
+  padding-bottom: 4px !important;
+  width: 190px;
+}
+h2 {
+  color: #5e6c84;
+  font-size: 14px;
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
+  line-height: 1.42857143;
+  margin: 20px 0 0 0 !important;
 }
