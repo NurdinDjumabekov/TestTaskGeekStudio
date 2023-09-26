@@ -1,9 +1,6 @@
 #root {
+  position: relative;
 }
-
-/* .divParent {
-  border: 1px solid black;
-} */
 
 * {
   margin: 0;
@@ -18,29 +15,40 @@ body {
 }
 
 #root td.w2ui-grid-data > div {
-  height: auto !important;
-  max-height: none !important;
+  max-height: 100% !important;
   overflow: visible !important;
   white-space: normal;
   font-size: 14px !important;
   line-height: normal !important;
-  /* background: gray !important; */
   padding: 15px 7px;
 }
-/* #root .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-odd,
-.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd {
-  border: 2px solid #000 !important;
-} */
+
+#root td.w2ui-grid-data {
+  /* background: red !important; */
+  border: 1px solid black;
+}
+
+.w2ui-head {
+  color: black !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.w2ui-head > div {
+  background: rgb(197, 215, 190);
+  padding: 12px 9px 18px !important;
+}
+
 i {
   color: #010101;
-  margin: 10px 0 0 10px !important;
   font-family: Arial, Helvetica, FreeSans, sans-serif;
   font-size: 14px;
   line-height: 25px !important;
   display: block;
   font-weight: 800 !important;
   text-indent: initial !important;
-  padding-bottom: 4px !important;
+  /* margin: 10px 0 0 10px !important;
+  padding-bottom: 4px !important; */
   width: 190px;
 }
 h2 {
@@ -49,4 +57,29 @@ h2 {
   font-family: Arial, Helvetica, FreeSans, sans-serif;
   line-height: 1.42857143;
   margin: 20px 0 0 0 !important;
+}
+.evetyInput {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 10px !important;
+  padding-bottom: 4px !important;
+  gap: 5px;
+}
+.select {
+  width: 154px;
+  height: 47px;
+  background: rgb(197, 215, 190);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select > select {
+  width: 120px;
+}
+.select option {
+  border-radius: 0px !important;
 }
